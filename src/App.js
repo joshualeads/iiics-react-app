@@ -156,6 +156,8 @@ function App() {
       selector: ".glightbox",
     });
 
+    console.log(glightbox);
+
     /**
      * Initiate pURE cOUNTER
      */

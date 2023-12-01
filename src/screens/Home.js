@@ -6,6 +6,10 @@ import AboutUs from "../components/AboutUs";
 import HeroImage from "../images/hero-img.png";
 import AboutUsImage from "../images/about.jpg";
 import AboutVideoPreview from "../images/about-2.jpg";
+import Testimonial1 from "../images/testimonials/testimonials-1.jpg";
+import Testimonial2 from "../images/testimonials/testimonials-2.jpg";
+import Testimonial3 from "../images/testimonials/testimonials-3.jpg";
+import Testimonial4 from "../images/testimonials/testimonials-4.jpg";
 
 function Home() {
   return (
@@ -14,9 +18,9 @@ function Home() {
       <Hero
         title={
           <>
-            Enjoy Your Healthy
+            Welcome to IIICS,
             <br />
-            Delicious Food
+            Bible and Christ training program
           </>
         }
         description={
@@ -41,7 +45,7 @@ function Home() {
             <div className="row gy-4">
               <div className="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                 <div className="why-box">
-                  <h3>Why Choose Yummy?</h3>
+                  <h3>Why IIICS?</h3>
                   <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna
@@ -126,7 +130,7 @@ function Home() {
                     data-purecounter-duration="1"
                     className="purecounter"
                   ></span>
-                  <p>Clients</p>
+                  <p>Students Enrolled</p>
                 </div>
               </div>
               {/* {/* <!-- End Stats Item --> */}
@@ -139,7 +143,7 @@ function Home() {
                     data-purecounter-duration="1"
                     className="purecounter"
                   ></span>
-                  <p>Projects</p>
+                  <p>Students Completed</p>
                 </div>
               </div>
               {/* {/* <!-- End Stats Item --> */}
@@ -152,7 +156,7 @@ function Home() {
                     data-purecounter-duration="1"
                     className="purecounter"
                   ></span>
-                  <p>Hours Of Support</p>
+                  <p>Currently Training</p>
                 </div>
               </div>
               {/* {/* <!-- End Stats Item --> */}
@@ -165,7 +169,7 @@ function Home() {
                     data-purecounter-duration="1"
                     className="purecounter"
                   ></span>
-                  <p>Workers</p>
+                  <p>Our Staffs</p>
                 </div>
               </div>
               {/* {/* <!-- End Stats Item --> */}
@@ -178,9 +182,9 @@ function Home() {
         <section id="menu" className="menu">
           <div className="container" data-aos="fade-up">
             <div className="section-header">
-              <h2>Our Menu</h2>
+              <h2>Our Courses</h2>
               <p>
-                Check Our <span>Yummy Menu</span>
+                Check Our <span>Courses</span>
               </p>
             </div>
 
@@ -195,7 +199,7 @@ function Home() {
                   data-bs-toggle="tab"
                   data-bs-target="#menu-starters"
                 >
-                  <h4>Starters</h4>
+                  <h4>Course 1</h4>
                 </a>
               </li>
               {/* <!-- End tab nav item --> */}
@@ -206,7 +210,7 @@ function Home() {
                   data-bs-toggle="tab"
                   data-bs-target="#menu-breakfast"
                 >
-                  <h4>Breakfast</h4>{" "}
+                  <h4>Course 2</h4>{" "}
                 </a>
                 {/* <!-- End tab nav item --> */}
               </li>
@@ -217,7 +221,7 @@ function Home() {
                   data-bs-toggle="tab"
                   data-bs-target="#menu-lunch"
                 >
-                  <h4>Lunch</h4>
+                  <h4>Course 3</h4>
                 </a>
               </li>
               {/* <!-- End tab nav item --> */}
@@ -228,7 +232,7 @@ function Home() {
                   data-bs-toggle="tab"
                   data-bs-target="#menu-dinner"
                 >
-                  <h4>Dinner</h4>
+                  <h4>Course 4</h4>
                 </a>
               </li>
               {/* <!-- End tab nav item --> */}
@@ -242,7 +246,7 @@ function Home() {
               <div className="tab-pane fade active show" id="menu-starters">
                 <div className="tab-header text-center">
                   <p>Menu</p>
-                  <h3>Starters</h3>
+                  <h3>Beginners</h3>
                 </div>
 
                 <div className="row gy-5">
@@ -261,7 +265,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$5.95</p>
+                    <p className="price d-none">$5.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -280,7 +284,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$14.95</p>
+                    <p className="price d-none">$14.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -299,7 +303,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$8.95</p>
+                    <p className="price d-none">$8.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -318,7 +322,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$12.95</p>
+                    <p className="price d-none">$12.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -337,7 +341,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$12.95</p>
+                    <p className="price d-none">$12.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -356,7 +360,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$9.95</p>
+                    <p className="price d-none">$9.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
                 </div>
@@ -385,7 +389,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$5.95</p>
+                    <p className="price d-none">$5.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -404,7 +408,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$14.95</p>
+                    <p className="price d-none">$14.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -423,7 +427,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$8.95</p>
+                    <p className="price d-none">$8.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -442,7 +446,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$12.95</p>
+                    <p className="price d-none">$12.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -461,7 +465,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$12.95</p>
+                    <p className="price d-none">$12.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -480,7 +484,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$9.95</p>
+                    <p className="price d-none">$9.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
                 </div>
@@ -509,7 +513,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$5.95</p>
+                    <p className="price d-none">$5.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -528,7 +532,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$14.95</p>
+                    <p className="price d-none">$14.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -547,7 +551,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$8.95</p>
+                    <p className="price d-none">$8.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -566,7 +570,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$12.95</p>
+                    <p className="price d-none">$12.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -585,7 +589,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$12.95</p>
+                    <p className="price d-none">$12.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -604,7 +608,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$9.95</p>
+                    <p className="price d-none">$9.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
                 </div>
@@ -633,7 +637,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$5.95</p>
+                    <p className="price d-none">$5.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -652,7 +656,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$14.95</p>
+                    <p className="price d-none">$14.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -671,7 +675,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$8.95</p>
+                    <p className="price d-none">$8.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -690,7 +694,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$12.95</p>
+                    <p className="price d-none">$12.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -709,7 +713,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$12.95</p>
+                    <p className="price d-none">$12.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
 
@@ -728,7 +732,7 @@ function Home() {
                     <p className="ingredients">
                       Lorem, deren, trataro, filede, nerada
                     </p>
-                    <p className="price">$9.95</p>
+                    <p className="price d-none">$9.95</p>
                   </div>
                   {/* <!-- Menu Item --> */}
                 </div>
@@ -781,7 +785,7 @@ function Home() {
                       </div>
                       <div className="col-lg-2 text-center">
                         <img
-                          src="assets/img/testimonials/testimonials-1.jpg"
+                          src={Testimonial1}
                           className="img-fluid testimonial-img"
                           alt=""
                         />
@@ -817,7 +821,7 @@ function Home() {
                       </div>
                       <div className="col-lg-2 text-center">
                         <img
-                          src="assets/img/testimonials/testimonials-2.jpg"
+                          src={Testimonial2}
                           className="img-fluid testimonial-img"
                           alt=""
                         />
@@ -853,7 +857,7 @@ function Home() {
                       </div>
                       <div className="col-lg-2 text-center">
                         <img
-                          src="assets/img/testimonials/testimonials-3.jpg"
+                          src={Testimonial3}
                           className="img-fluid testimonial-img"
                           alt=""
                         />
@@ -889,7 +893,7 @@ function Home() {
                       </div>
                       <div className="col-lg-2 text-center">
                         <img
-                          src="assets/img/testimonials/testimonials-4.jpg"
+                          src={Testimonial4}
                           className="img-fluid testimonial-img"
                           alt=""
                         />
@@ -905,77 +909,13 @@ function Home() {
         </section>
         {/* <!-- End Testimonials Section --> */}
 
-        {/* <!-- ======= Events Section ======= --> */}
-        <section id="events" className="events">
-          <div className="container-fluid" data-aos="fade-up">
-            <div className="section-header">
-              <h2>Events</h2>
-              <p>
-                Share <span>Your Moments</span> In Our Restaurant
-              </p>
-            </div>
-
-            <div
-              className="slides-3 swiper"
-              data-aos="fade-up"
-              data-aos-delay="100"
-            >
-              <div className="swiper-wrapper">
-                <div
-                  className="swiper-slide event-item d-flex flex-column justify-content-end"
-                  //style="background-image: url(assets/img/events-1.jpg)"
-                >
-                  <h3>Custom Parties</h3>
-                  <div className="price align-self-start">$99</div>
-                  <p className="description">
-                    Quo corporis voluptas ea ad. Consectetur inventore sapiente
-                    ipsum voluptas eos omnis facere. Enim facilis veritatis id
-                    est rem repudiandae nulla expedita quas.
-                  </p>
-                </div>
-                {/* <!-- End Event item --> */}
-
-                <div
-                  className="swiper-slide event-item d-flex flex-column justify-content-end"
-                  //style="background-image: url(assets/img/events-2.jpg)"
-                >
-                  <h3>Private Parties</h3>
-                  <div className="price align-self-start">$289</div>
-                  <p className="description">
-                    In delectus sint qui et enim. Et ab repudiandae inventore
-                    quaerat doloribus. Facere nemo vero est ut dolores ea
-                    assumenda et. Delectus saepe accusamus aspernatur.
-                  </p>
-                </div>
-                {/* <!-- End Event item --> */}
-
-                <div
-                  className="swiper-slide event-item d-flex flex-column justify-content-end"
-                  //style="background-image: url(assets/img/events-3.jpg)"
-                >
-                  <h3>Birthday Parties</h3>
-                  <div className="price align-self-start">$499</div>
-                  <p className="description">
-                    Laborum aperiam atque omnis minus omnis est qui assumenda
-                    quos. Quis id sit quibusdam. Esse quisquam ducimus officia
-                    ipsum ut quibusdam maxime. Non enim perspiciatis.
-                  </p>
-                </div>
-                {/* <!-- End Event item --> */}
-              </div>
-              <div className="swiper-pagination"></div>
-            </div>
-          </div>
-        </section>
-        {/* <!-- End Events Section --> */}
-
         {/* <!-- ======= Chefs Section ======= --> */}
         <section id="chefs" className="chefs section-bg">
           <div className="container" data-aos="fade-up">
             <div className="section-header">
-              <h2>Chefs</h2>
+              <h2>Leaders</h2>
               <p>
-                Our <span>Proffesional</span> Chefs
+                Our <span>Leaders</span> in Mission
               </p>
             </div>
 
@@ -1108,9 +1048,9 @@ function Home() {
         <section id="book-a-table" className="book-a-table">
           <div className="container" data-aos="fade-up">
             <div className="section-header">
-              <h2>Book A Table</h2>
+              <h2>Book A Session</h2>
               <p>
-                Book <span>Your Stay</span> With Us
+                Book <span>Your Session</span> With Us
               </p>
             </div>
 

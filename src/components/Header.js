@@ -1,10 +1,6 @@
 import NestedDropDown from "./NestedDropDown";
 
 function Header({ title, navLinks, nestedDropDownOptions, toggleMobileNav }) {
-  function toggleMobileNav(event) {
-    console.log("Mobile Nav Clicked");
-  }
-
   return (
     <>
       {/* <!-- ======= Header ======= --> */}

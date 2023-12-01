@@ -14,10 +14,9 @@ function AboutUs({ image, phoneNumber, aboutVideoPreview }) {
           <div className="row gy-4">
             <div
               className="col-lg-7 position-relative about-img"
-              //style={{ "background-image": url('assets / img / about.jpg') }}
               data-aos="fade-up"
               data-aos-delay="150"
-              style={{ backgroundImage: image }}
+              style={{ backgroundImage: `url(${image})` }}
             >
               <div className="call-us position-absolute">
                 <h4>Call Us</h4>
@@ -62,7 +61,9 @@ function AboutUs({ image, phoneNumber, aboutVideoPreview }) {
                   <a
                     href="https://www.youtube.com/watch?v=LXb3EKWsInQ"
                     className="glightbox play-btn"
-                  ></a>
+                  >
+                    <p className="d-none">Play</p>
+                  </a>
                 </div>
               </div>
             </div>
