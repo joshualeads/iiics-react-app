@@ -1,0 +1,72 @@
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+$color_1: #000;
+$color_2: var(--color-primary);
+$color_3: #fff;
+$font-family_1: var(--font-secondary);
+
+.header {
+  background: #fff;
+  transition: all 0.5s;
+  z-index: 997;
+  height: 90px;
+  border-bottom: 1px solid #fff;
+  .logo {
+    img {
+      max-height: 40px;
+      margin-right: 6px;
+    }
+    h1 {
+      font-size: 28px;
+      font-weight: 700;
+      color: $color_1;
+      margin: 0;
+      font-family: $font-family_1;
+      span {
+        color: $color_2;
+      }
+    }
+  }
+  .btn-book-a-table {
+    font-size: 14px;
+    color: $color_3;
+    background: var(--color-primary);
+    padding: 8px 20px;
+    margin-left: 30px;
+    border-radius: 50px;
+    transition: 0.3s;
+    &:focus {
+      font-size: 14px;
+      color: $color_3;
+      background: var(--color-primary);
+      padding: 8px 20px;
+      margin-left: 30px;
+      border-radius: 50px;
+      transition: 0.3s;
+      &:hover {
+        color: $color_3;
+        background: rgba(206, 18, 18, 0.8);
+      }
+    }
+    &:hover {
+      color: $color_3;
+      background: rgba(206, 18, 18, 0.8);
+    }
+  }
+}
+
+.header.sticked {
+  border-color: #fff;
+  border-color: #eee;
+}
+
+section {
+  scroll-margin-top: 90px;
+}
+
+@media (max-width: 575px) {
+  .header {
+    height: 70px;
+  }
+}

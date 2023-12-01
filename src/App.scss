@@ -1,0 +1,32 @@
+/*
+    - Convert CSS TO SCSS Using https://www.css2scss.com/
+*/
+
+@import "~bootstrap/scss/bootstrap";
+@import "./vendor/bootstrap-icons/bootstrap-icons.css";
+@import "./vendor/glightbox/css/glightbox.min.css";
+@import "./vendor/swiper/swiper-bundle.min.css";
+
+@import "./styles/Fonts.scss";
+@import "./styles/Colors.scss";
+@import "./styles/General.scss";
+@import "./styles/SectionHeader.scss";
+@import "./styles/Breadcrumbs.scss";
+@import "./styles/ScrollTop.scss";
+@import "./styles/Preloader.scss";
+
+@import "./styles/Header.scss";
+@import "./styles/NavigationDesktop.scss";
+@import "./styles/NavigationMobile.scss";
+@import "./styles/About.scss";
+@import "./styles/WhyUs.scss";
+@import "./styles/StatsCounter.scss";
+@import "./styles/Menu.scss";
+@import "./styles/Testimonials.scss";
+@import "./styles/Events.scss";
+@import "./styles/Chefs.scss";
+@import "./styles/BookTable.scss";
+@import "./styles/Gallery.scss";
+@import "./styles/Contact.scss";
+@import "./styles/Hero.scss";
+@import "./styles/Footer.scss";
