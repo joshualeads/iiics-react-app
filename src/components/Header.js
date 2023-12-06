@@ -1,3 +1,5 @@
+import Logo from "../images/logo.png";
+
 import NestedDropDown from "./NestedDropDown";
 
 function Header({ title, navLinks, nestedDropDownOptions, toggleMobileNav }) {
@@ -16,7 +18,8 @@ function Header({ title, navLinks, nestedDropDownOptions, toggleMobileNav }) {
             {/* {/* <!-- Uncomment the line below if you also wish to use an image logo --> */}
             {/* {/* <!-- <img src="assets/img/logo.png" alt=""> --> */}
             <h1>
-              {title}
+              {/* <img src={Logo} alt={title} /> */}
+              IIICS
               <span>.</span>
             </h1>
           </a>

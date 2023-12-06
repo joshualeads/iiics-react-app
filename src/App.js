@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import GLightbox from "glightbox";
-import PureCounter from "@srexi/purecounterjs";
+import PureCounter from "@srexi/purecounterjs/js/purecounter";
 import Swiper from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
