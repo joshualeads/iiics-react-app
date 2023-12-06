@@ -1,6 +1,6 @@
 function OurLeaders() {
   return (
-    <section id="chefs" className="chefs section-bg">
+    <section id="leaders" className="chefs section-bg">
       <div className="container" data-aos="fade-up">
         <div className="section-header">
           <h2>Leaders</h2>

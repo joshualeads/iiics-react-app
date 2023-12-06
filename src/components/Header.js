@@ -1,8 +1,21 @@
+import { useRef } from "react";
 import Logo from "../images/logo.png";
 
 import NestedDropDown from "./NestedDropDown";
 
 function Header({ title, navLinks, nestedDropDownOptions, toggleMobileNav }) {
+  const mobileNavShow = useRef(null);
+  const mobileNavHide = useRef(null);
+
+  function toggleMobileNav() {
+    console.log(mobileNavShow.current.classList);
+    console.log(mobileNavHide.current.classList);
+
+    document.querySelector("body").classList.toggle("mobile-nav-active");
+    mobileNavShow.current.classList.toggle("d-none");
+    mobileNavHide.current.classList.toggle("d-none");
+  }
+
   return (
     <>
       {/* <!-- ======= Header ======= --> */}
@@ -45,10 +58,12 @@ function Header({ title, navLinks, nestedDropDownOptions, toggleMobileNav }) {
           </a>
           <i
             className="mobile-nav-toggle mobile-nav-show bi bi-list"
+            ref={mobileNavShow}
             onClick={toggleMobileNav}
           ></i>
           <i
             className="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"
+            ref={mobileNavHide}
             onClick={toggleMobileNav}
           ></i>
         </div>

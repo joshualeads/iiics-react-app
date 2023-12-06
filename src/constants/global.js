@@ -1,8 +1,8 @@
 export const NAV_LINKS = [
   { name: "Home", url: "#hero" },
   { name: "About", url: "#about" },
-  { name: "Courses", url: "#courses" },
-  { name: "Events", url: "#events" },
+  { name: "Courses", url: "#menu" },
+  // { name: "Events", url: "#events" },
   { name: "Our Leaders", url: "#leaders" },
   { name: "Gallery", url: "#gallery" },
   { name: "Contact", url: "#contact" },
