@@ -4,8 +4,16 @@ import Logo from "../images/logo.png";
 import NestedDropDown from "./NestedDropDown";
 
 function Header({ title, navLinks, nestedDropDownOptions, toggleMobileNav }) {
+  const header = useRef(null);
   const mobileNavShow = useRef(null);
   const mobileNavHide = useRef(null);
+  const menuLink = useRef(null);
+
+  function stickyHeaderOnScroll() {
+    window.scrollY > 100
+      ? header.current.classList.add("sticked")
+      : header.current.classList.remove("sticked");
+  }
 
   function toggleMobileNav() {
     console.log(mobileNavShow.current.classList);
@@ -22,6 +30,8 @@ function Header({ title, navLinks, nestedDropDownOptions, toggleMobileNav }) {
       <header
         id="header"
         className="header fixed-top d-flex align-items-center"
+        ref={header}
+        onScroll={stickyHeaderOnScroll}
       >
         <div className="container d-flex align-items-center justify-content-between">
           <a
@@ -42,7 +52,9 @@ function Header({ title, navLinks, nestedDropDownOptions, toggleMobileNav }) {
               {navLinks.map((link) => {
                 return (
                   <li key={link.url}>
-                    <a href={link.url}>{link.name}</a>
+                    <a href={link.url} ref={menuLink} onClick={toggleMobileNav}>
+                      {link.name}
+                    </a>
                   </li>
                 );
               })}
