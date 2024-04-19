@@ -1,3 +1,5 @@
+import { useQuery, gql } from "@apollo/client";
+
 // Components
 import Hero from "../components/Home/Hero";
 import AboutUs from "../components/Home/AboutUs";
@@ -16,71 +18,107 @@ import HeroImage from "../images/hero-img.png";
 import AboutUsImage from "../images/about.jpg";
 import AboutVideoPreview from "../images/about-2.jpg";
 
-function Home() {
-  return (
-    <>
-      {/* {/* <!-- ======= Hero Section ======= --> */}
-      <Hero
-        title={
-          <>
-            Welcome to IIICS,
-            <br />
-            Bible and Christ training program
-          </>
+const HomePage_Query = gql`
+  query {
+    leaders{
+      data {
+        id
+        attributes {
+          Name,
+          Role,
+          Short_Description,
+          Email
         }
-        description={
-          "Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat"
+      }
+      meta {
+        pagination {
+          page,
+          pageSize,
+          total,
+          pageCount
         }
-        buttonLink={"#book-a-table"}
-        VideoLink={"https://www.youtube.com/watch?v=LXb3EKWsInQ"}
-        image={HeroImage}
-      />
-      {/* {/* <!-- End Hero Section --> */}
+      }
+    }
+  }
+`;
 
-      <main id="main">
-        <AboutUs
-          image={AboutUsImage}
-          phoneNumber={"+1 9999 99999 99"}
-          aboutVideoPreview={AboutVideoPreview}
+const Home = () => {
+  const { loading, error, data } = useQuery(HomePage_Query);
+
+  if (loading) {
+    return <div id="preloader"></div>;
+  }
+  if (error) {
+    return <p>Error: {error.message}</p>;
+  }
+  if (data) {
+    console.log(data);
+
+    return (
+      <>
+        {/* {/* <!-- ======= Hero Section ======= --> */}
+        <Hero
+          title={
+            <>
+              Welcome to IIICS,
+              <br />
+              Bible and Christ training program
+            </>
+          }
+          description={
+            "Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat"
+          }
+          buttonLink={"#book-a-table"}
+          VideoLink={"https://www.youtube.com/watch?v=LXb3EKWsInQ"}
+          image={HeroImage}
         />
+        {/* {/* <!-- End Hero Section --> */}
 
-        {/* {/* <!-- ======= Why Us Section ======= --> */}
-        <WhyUs />
-        {/* {/* <!-- End Why Us Section --> */}
+        <main id="main">
+          <AboutUs
+            image={AboutUsImage}
+            phoneNumber={"+1 9999 99999 99"}
+            aboutVideoPreview={AboutVideoPreview}
+          />
 
-        {/* {/* <!-- ======= Stats Counter Section ======= --> */}
-        <StatusCounter />
-        {/* {/* <!-- End Stats Counter Section --> */}
+          {/* {/* <!-- ======= Why Us Section ======= --> */}
+          <WhyUs />
+          {/* {/* <!-- End Why Us Section --> */}
 
-        {/* <!-- ======= Menu Section ======= --> */}
-        <MenuCourse />
-        {/* <!-- End Menu Section --> */}
+          {/* {/* <!-- ======= Stats Counter Section ======= --> */}
+          <StatusCounter />
+          {/* {/* <!-- End Stats Counter Section --> */}
 
-        {/* <!-- ======= Testimonials Section ======= --> */}
-        <Testimonials />
-        {/* <!-- End Testimonials Section --> */}
+          {/* <!-- ======= Menu Section ======= --> */}
+          <MenuCourse />
+          {/* <!-- End Menu Section --> */}
 
-        {/* <!-- ======= Chefs Section ======= --> */}
-        <OurLeaders />
-        {/* <!-- End Chefs Section --> */}
+          {/* <!-- ======= Testimonials Section ======= --> */}
+          <Testimonials />
+          {/* <!-- End Testimonials Section --> */}
 
-        {/* <!-- ======= Book A Table Section ======= --> */}
-        <BookSession />
-        {/* <!-- End Book A Table Section --> */}
+          {/* <!-- ======= Chefs Section ======= --> */}
+          <OurLeaders />
+          {/* <!-- End Chefs Section --> */}
 
-        {/* <!-- ======= Gallery Section ======= --> */}
-        <Gallery />
-        {/* <!-- End Gallery Section --> */}
+          {/* <!-- ======= Book A Table Section ======= --> */}
+          <BookSession />
+          {/* <!-- End Book A Table Section --> */}
 
-        {/* <!-- ======= Contact Section ======= --> */}
-        <ContactUs />
-        {/* <!-- End Contact Section --> */}
-      </main>
-      {/* <!-- End #main --> */}
+          {/* <!-- ======= Gallery Section ======= --> */}
+          <Gallery />
+          {/* <!-- End Gallery Section --> */}
 
-      <ScrollTop />
-    </>
-  );
-}
+          {/* <!-- ======= Contact Section ======= --> */}
+          <ContactUs />
+          {/* <!-- End Contact Section --> */}
+        </main>
+        {/* <!-- End #main --> */}
+
+        <ScrollTop />
+      </>
+    );
+  }
+};
 
 export default Home;
