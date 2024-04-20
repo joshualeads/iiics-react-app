@@ -27,7 +27,21 @@ const HomePage_Query = gql`
           Name,
           Role,
           Short_Description,
-          Email
+          Email,
+          Leader_Id,
+          Profile_Picture {
+            data {
+              id
+              attributes {
+                name,
+                alternativeText,
+                caption,
+                width,
+                height,
+                formats
+              }
+            }
+          }
         }
       }
       meta {
@@ -53,6 +67,8 @@ const Home = () => {
   }
   if (data) {
     console.log(data);
+
+    const leaders = data.leaders;
 
     return (
       <>
@@ -97,9 +113,9 @@ const Home = () => {
           <Testimonials />
           {/* <!-- End Testimonials Section --> */}
 
-          {/* <!-- ======= Chefs Section ======= --> */}
-          <OurLeaders />
-          {/* <!-- End Chefs Section --> */}
+          {/* <!-- ======= Leaders Section ======= --> */}
+          {leaders ? <OurLeaders leaders={leaders} /> : <> </>}
+          {/* <!-- End Leasers Section --> */}
 
           {/* <!-- ======= Book A Table Section ======= --> */}
           <BookSession />

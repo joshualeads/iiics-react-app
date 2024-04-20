@@ -18,13 +18,14 @@ $color_5: rgba(33, 37, 41, 0.7);
     .member-img {
       position: relative;
       overflow: hidden;
+      padding-bottom: 1%;
       &:after {
         position: absolute;
         content: "";
         left: 0;
         bottom: 0;
         height: 100%;
-        width: 100%;
+        width: 110%;
         background: url(../images/team-shape.svg) no-repeat center bottom;
         background-size: contain;
         z-index: 1;
