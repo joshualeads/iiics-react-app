@@ -8,6 +8,75 @@ $color_4: rgba(33, 37, 41, 0.4);
 $color_5: rgba(33, 37, 41, 0.7);
 
 .chefs {
+  .swiper {
+    padding-right: 4%;
+    padding-left: 4%;
+    padding-bottom: 4%;
+    .swiper-wrapper {
+      margin-top: 2%;
+      margin-bottom: 2%;
+      display: flex;
+      .swiper-slide {
+        display: flex;
+        .leader-card {
+          width: 100%;
+        }
+      }
+    }
+    .swiper-button-next {
+      --swiper-navigation-color: #000;
+    }
+
+    .swiper-button-prev {
+      --swiper-navigation-color: #000;
+    }
+    .swiper-pagination-bullet {
+      background-color: #000;
+    }
+  }
+
+  .carousel-root {
+    padding-top: 0;
+    .carousel {
+      .arrow-left {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .bi {
+          font-size: 3rem;
+        }
+      }
+      .arrow-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        .bi {
+          font-size: 3rem;
+        }
+      }
+      .slider-wrapper {
+        padding: 3%;
+        .slide {
+          display: flex;
+          align-items: center;
+          .leader-card {
+            width: 95%;
+          }
+        }
+      }
+    }
+  }
+
   .chef-member {
     overflow: hidden;
     text-align: center;
@@ -78,7 +147,7 @@ $color_5: rgba(33, 37, 41, 0.7);
       }
     }
     &:hover {
-      transform: scale(1.08);
+      transform: scale(1.05);
       box-shadow: 0px 0 30px rgba(55, 55, 63, 0.15);
       .social {
         right: 8px;

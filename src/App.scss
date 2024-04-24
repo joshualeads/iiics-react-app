@@ -2,11 +2,8 @@
     - Convert CSS TO SCSS Using https://www.css2scss.com/
 */
 
-//@import "~bootstrap/scss/bootstrap";
-//@import "./vendor/bootstrap-icons/bootstrap-icons.css";
-//@import "./vendor/glightbox/css/glightbox.min.css";
-//@import "./vendor/swiper/swiper-bundle.min.css";
 @import url("../node_modules//bootstrap/scss/bootstrap.scss");
+
 @import url("./styles/BootStrapIcons.scss");
 @import url("../node_modules/glightbox/dist/css/glightbox.min.css");
 @import url("../node_modules/swiper/swiper-bundle.min.css");
@@ -34,3 +31,5 @@
 @import "./styles/Contact.scss";
 @import "./styles/Hero.scss";
 @import "./styles/Footer.scss";
+
+@import "./styles/Responsive.scss";
