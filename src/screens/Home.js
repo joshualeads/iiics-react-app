@@ -11,7 +11,6 @@ import OurLeaders from "../components/Home/OurLeaders";
 import BookSession from "../components/Home/BookSession";
 import Gallery from "../components/Home/Gallery";
 import ContactUs from "../components/Home/ContactUs";
-import ScrollTop from "../components/Home/ScrollTop";
 
 // Media Files
 import HeroImage from "../images/hero-img.png";
@@ -114,7 +113,9 @@ const Home = () => {
           {/* <!-- End Testimonials Section --> */}
 
           {/* <!-- ======= Leaders Section ======= --> */}
+          {/*
           {leaders ? <OurLeaders leaders={leaders} /> : <> </>}
+          */}
           {/* <!-- End Leasers Section --> */}
 
           {/* <!-- ======= Book A Table Section ======= --> */}
@@ -130,8 +131,6 @@ const Home = () => {
           {/* <!-- End Contact Section --> */}
         </main>
         {/* <!-- End #main --> */}
-
-        <ScrollTop />
       </>
     );
   }

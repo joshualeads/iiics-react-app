@@ -87,10 +87,10 @@ const initializeApp = (togglePreloader) => {
     selector: ".glightbox",
   });
 
-  //console.log(glightbox);
+  console.log(glightbox);
 
   /**
-   * Initiate pURE cOUNTER
+   * Initiate Pure Counter
    */
   new PureCounter();
 

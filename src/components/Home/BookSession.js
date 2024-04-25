@@ -21,7 +21,6 @@ function BookSession() {
             <form
               action="forms/book-a-table.php"
               method="post"
-              role="form"
               className="php-email-form"
               data-aos="fade-up"
               data-aos-delay="100"

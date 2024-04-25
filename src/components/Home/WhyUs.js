@@ -14,7 +14,7 @@ function WhyUs() {
                 optio ad corporis.
               </p>
               <div className="text-center">
-                <a href="#" className="more-btn">
+                <a href="/" className="more-btn">
                   Learn More <i className="bx bx-chevron-right"></i>
                 </a>
               </div>

@@ -97,16 +97,16 @@ const OurLeaders = (props) => {
                           }
                         />
                         <div className="social">
-                          <a href="">
+                          <a href="/">
                             <i className="bi bi-twitter"></i>
                           </a>
-                          <a href="">
+                          <a href="/">
                             <i className="bi bi-facebook"></i>
                           </a>
-                          <a href="">
+                          <a href="/">
                             <i className="bi bi-instagram"></i>
                           </a>
-                          <a href="">
+                          <a href="/">
                             <i className="bi bi-linkedin"></i>
                           </a>
                         </div>

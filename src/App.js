@@ -18,6 +18,7 @@ import Blogs from "./screens/Blogs";
 //Components
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import ScrollTop from "./components/ScrollTop";
 
 function App() {
   const [preloader, togglePreloader] = useState(true);
@@ -50,6 +51,7 @@ function App() {
       </Router>
       <Footer />
 
+      <ScrollTop />
       {preloader === true ? <div id="preloader"></div> : null}
     </>
   );

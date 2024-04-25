@@ -19,6 +19,7 @@ function MenuCourse() {
               className="nav-link active show"
               data-bs-toggle="tab"
               data-bs-target="#menu-starters"
+              href="/"
             >
               <h4>Course 1</h4>
             </a>
@@ -30,6 +31,7 @@ function MenuCourse() {
               className="nav-link"
               data-bs-toggle="tab"
               data-bs-target="#menu-breakfast"
+              href="/"
             >
               <h4>Course 2</h4>{" "}
             </a>
@@ -41,6 +43,7 @@ function MenuCourse() {
               className="nav-link"
               data-bs-toggle="tab"
               data-bs-target="#menu-lunch"
+              href="/"
             >
               <h4>Course 3</h4>
             </a>
@@ -52,6 +55,7 @@ function MenuCourse() {
               className="nav-link"
               data-bs-toggle="tab"
               data-bs-target="#menu-dinner"
+              href="/"
             >
               <h4>Course 4</h4>
             </a>

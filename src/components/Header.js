@@ -1,9 +1,9 @@
 import { useRef } from "react";
-import Logo from "../images/logo.png";
+//import Logo from "../images/logo.png";
 
 import NestedDropDown from "./NestedDropDown";
 
-function Header({ title, navLinks, nestedDropDownOptions, toggleMobileNav }) {
+function Header({ title, navLinks, nestedDropDownOptions }) {
   const header = useRef(null);
   const mobileNavShow = useRef(null);
   const mobileNavHide = useRef(null);
