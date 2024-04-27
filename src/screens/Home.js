@@ -136,7 +136,11 @@ const Home = () => {
           {/* <!-- End Menu Section --> */}
 
           {/* <!-- ======= Testimonials Section ======= --> */}
-          {testimonials ? <Testimonials testimonials={testimonials} /> : <></>}
+          {testimonials.data.length ? (
+            <Testimonials testimonials={testimonials} />
+          ) : (
+            <></>
+          )}
           {/* <!-- End Testimonials Section --> */}
 
           {/* <!-- ======= Leaders Section ======= --> */}
