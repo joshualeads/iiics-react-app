@@ -19,6 +19,30 @@ import AboutVideoPreview from "../images/about-2.jpg";
 
 const HomePage_Query = gql`
   query {
+    testimonials{
+      data {
+        id
+        attributes {
+          From,
+          Designation,
+          Quote,
+          Ratings,
+          Photo {
+            data {
+              id,
+              attributes {
+                name,
+                alternativeText,
+                caption,
+                width,
+                height,
+                formats
+              }
+            }
+          }
+        }
+      }
+    }
     leaders{
       data {
         id
@@ -67,7 +91,10 @@ const Home = () => {
   if (data) {
     console.log(data);
 
-    const leaders = data.leaders;
+    const { leaders, testimonials } = data;
+
+    console.log(leaders);
+    console.log(testimonials);
 
     return (
       <>
@@ -109,13 +136,11 @@ const Home = () => {
           {/* <!-- End Menu Section --> */}
 
           {/* <!-- ======= Testimonials Section ======= --> */}
-          <Testimonials />
+          {testimonials ? <Testimonials testimonials={testimonials} /> : <></>}
           {/* <!-- End Testimonials Section --> */}
 
           {/* <!-- ======= Leaders Section ======= --> */}
-          {/*
           {leaders ? <OurLeaders leaders={leaders} /> : <> </>}
-          */}
           {/* <!-- End Leasers Section --> */}
 
           {/* <!-- ======= Book A Table Section ======= --> */}

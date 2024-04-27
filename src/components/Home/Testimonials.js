@@ -1,9 +1,12 @@
-import Testimonial1 from "../../images/testimonials/testimonials-1.jpg";
-import Testimonial2 from "../../images/testimonials/testimonials-2.jpg";
-import Testimonial3 from "../../images/testimonials/testimonials-3.jpg";
-import Testimonial4 from "../../images/testimonials/testimonials-4.jpg";
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 
-function Testimonials() {
+// import required modules
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+const Testimonials = (props) => {
+  let testimonialList = props.testimonials.data;
   return (
     <section id="testimonials" className="testimonials section-bg">
       <div className="container" data-aos="fade-up">
@@ -19,156 +22,89 @@ function Testimonials() {
           data-aos="fade-up"
           data-aos-delay="100"
         >
-          <div className="swiper-wrapper">
-            <div className="swiper-slide">
-              <div className="testimonial-item">
-                <div className="row gy-4 justify-content-center">
-                  <div className="col-lg-6">
-                    <div className="testimonial-content">
-                      <p>
-                        <i className="bi bi-quote quote-icon-left"></i>
-                        Proin iaculis purus consequat sem cure digni ssim donec
-                        porttitora entum suscipit rhoncus. Accusantium quam,
-                        ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                        risus at semper.
-                        <i className="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Saul Goodman</h3>
-                      <h4>Ceo &amp; Founder</h4>
-                      <div className="stars">
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-2 text-center">
-                    <img
-                      src={Testimonial1}
-                      className="img-fluid testimonial-img"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- End testimonial item --> */}
+          <Swiper
+            navigation={false}
+            pagination={true}
+            modules={[Navigation, Pagination, Autoplay]}
+            slidesPerView={1}
+            spaceBetween={0}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+              pauseOnMouseEnter: true,
+            }}
+            speed={1200}
+          >
+            {testimonialList.map((testimony) => {
+              let testimonyPic = testimony.attributes.Photo.data || "";
 
-            <div className="swiper-slide">
-              <div className="testimonial-item">
-                <div className="row gy-4 justify-content-center">
-                  <div className="col-lg-6">
-                    <div className="testimonial-content">
-                      <p>
-                        <i className="bi bi-quote quote-icon-left"></i>
-                        Export tempor illum tamen malis malis eram quae irure
-                        esse labore quem cillum quid cillum eram malis quorum
-                        velit fore eram velit sunt aliqua noster fugiat irure
-                        amet legam anim culpa.
-                        <i className="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Sara Wilsson</h3>
-                      <h4>Designer</h4>
-                      <div className="stars">
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-2 text-center">
-                    <img
-                      src={Testimonial2}
-                      className="img-fluid testimonial-img"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- End testimonial item --> */}
+              if (testimonyPic) {
+                testimonyPic =
+                  testimonyPic.attributes.formats.large ||
+                  testimonyPic.attributes.formats.medium ||
+                  testimonyPic.attributes.formats.small ||
+                  testimonyPic.attributes.formats.thumbnail;
+              }
 
-            <div className="swiper-slide">
-              <div className="testimonial-item">
-                <div className="row gy-4 justify-content-center">
-                  <div className="col-lg-6">
-                    <div className="testimonial-content">
-                      <p>
-                        <i className="bi bi-quote quote-icon-left"></i>
-                        Enim nisi quem export duis labore cillum quae magna enim
-                        sint quorum nulla quem veniam duis minim tempor labore
-                        quem eram duis noster aute amet eram fore quis sint
-                        minim.
-                        <i className="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>Jena Karlis</h3>
-                      <h4>Store Owner</h4>
-                      <div className="stars">
+              let generateStarRating = (rating) => {
+                let stars = [];
+                for (let star = 1; star <= 5; star++) {
+                  if (star <= rating) {
+                    stars.push(
+                      <>
                         <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="col-lg-2 text-center">
-                    <img
-                      src={Testimonial3}
-                      className="img-fluid testimonial-img"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- End testimonial item --> */}
+                      </>
+                    );
+                  } else {
+                    stars.push(
+                      <>
+                        <i className="bi bi-star"></i>
+                      </>
+                    );
+                  }
+                }
+                return stars;
+              };
 
-            <div className="swiper-slide">
-              <div className="testimonial-item">
-                <div className="row gy-4 justify-content-center">
-                  <div className="col-lg-6">
-                    <div className="testimonial-content">
-                      <p>
-                        <i className="bi bi-quote quote-icon-left"></i>
-                        Quis quorum aliqua sint quem legam fore sunt eram irure
-                        aliqua veniam tempor noster veniam enim culpa labore
-                        duis sunt culpa nulla illum cillum fugiat legam esse
-                        veniam culpa fore nisi cillum quid.
-                        <i className="bi bi-quote quote-icon-right"></i>
-                      </p>
-                      <h3>John Larson</h3>
-                      <h4>Entrepreneur</h4>
-                      <div className="stars">
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
-                        <i className="bi bi-star-fill"></i>
+              return (
+                <SwiperSlide>
+                  <div
+                    className="testimonial-item"
+                    key={`${"testimony-"}testimony.id`}
+                  >
+                    <div className="row gy-4 justify-content-center">
+                      <div className="col-lg-6">
+                        <div className="testimonial-content">
+                          <p>
+                            <i className="bi bi-quote quote-icon-left"></i>
+                            {testimony.attributes.Quote}
+                            <i className="bi bi-quote quote-icon-right"></i>
+                          </p>
+                          <h3>{testimony.attributes.From}</h3>
+                          <h4>{testimony.attributes.Designation}</h4>
+
+                          <div className="stars">
+                            {generateStarRating(testimony.attributes.Ratings)}
+                          </div>
+                        </div>
+                      </div>
+                      <div className="col-lg-2 text-center">
+                        <img
+                          src={testimonyPic ? testimonyPic.url : ""}
+                          className="img-fluid testimonial-img"
+                          alt=""
+                        />
                       </div>
                     </div>
                   </div>
-                  <div className="col-lg-2 text-center">
-                    <img
-                      src={Testimonial4}
-                      className="img-fluid testimonial-img"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* <!-- End testimonial item --> */}
-          </div>
-          <div className="swiper-pagination"></div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Testimonials;
