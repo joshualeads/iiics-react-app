@@ -30,38 +30,21 @@ const OurLeaders = (props) => {
             navigation={true}
             pagination={true}
             modules={[Navigation, Pagination]}
-            spaceLeft={20}
-            spaceRight={20}
+            speed={600}
+            loop={true}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
+            slidesPerView={"auto"}
             breakpoints={{
-              0: {
-                // xs
+              320: {
                 slidesPerView: 1,
-                spaceBetween: 15,
+                spaceBetween: 40,
               },
-              576: {
-                // sm
-                slidesPerView: 1,
-                spaceBetween: 15,
-              },
-              768: {
-                // md
-                slidesPerView: 2,
-                spaceBetween: 15,
-              },
-              992: {
-                // lg
-                slidesPerView: 3,
-                spaceBetween: 20,
-              },
+
               1200: {
-                // xl
                 slidesPerView: 3,
-                spaceBetween: 20,
-              },
-              1400: {
-                // xxl
-                slidesPerView: 3,
-                spaceBetween: 20,
               },
             }}
           >

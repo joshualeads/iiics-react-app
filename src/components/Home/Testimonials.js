@@ -26,14 +26,14 @@ const Testimonials = (props) => {
             navigation={false}
             pagination={true}
             modules={[Navigation, Pagination, Autoplay]}
-            slidesPerView={1}
             spaceBetween={0}
+            speed={600}
+            loop={true}
             autoplay={{
-              delay: 3000,
+              delay: 5000,
               disableOnInteraction: false,
-              pauseOnMouseEnter: true,
             }}
-            speed={1200}
+            slidesPerView={"auto"}
           >
             {testimonialList.map((testimony) => {
               let testimonyPic = testimony.attributes.Photo.data || "";
@@ -70,7 +70,7 @@ const Testimonials = (props) => {
                 <SwiperSlide>
                   <div
                     className="testimonial-item"
-                    key={`${"testimony-"}testimony.id`}
+                    key={`testimony_${testimony.id}`}
                   >
                     <div className="row gy-4 justify-content-center">
                       <div className="col-lg-6">

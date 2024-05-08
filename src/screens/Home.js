@@ -19,6 +19,27 @@ import AboutVideoPreview from "../images/about-2.jpg";
 
 const HomePage_Query = gql`
   query {
+    gallery {
+      data {
+        id,
+        attributes {
+          Photos {
+            data {
+              id,
+              attributes {
+                name,
+                alternativeText,
+                caption,
+                width,
+                height,
+                formats,
+                hash
+              }
+            }
+          }
+        }
+      }
+    }
     testimonials{
       data {
         id
@@ -91,8 +112,9 @@ const Home = () => {
   if (data) {
     console.log(data);
 
-    const { leaders, testimonials } = data;
+    const { gallery, leaders, testimonials } = data;
 
+    console.log(gallery);
     console.log(leaders);
     console.log(testimonials);
 
@@ -144,7 +166,7 @@ const Home = () => {
           {/* <!-- End Testimonials Section --> */}
 
           {/* <!-- ======= Leaders Section ======= --> */}
-          {leaders ? <OurLeaders leaders={leaders} /> : <> </>}
+          {leaders.data.length ? <OurLeaders leaders={leaders} /> : <> </>}
           {/* <!-- End Leasers Section --> */}
 
           {/* <!-- ======= Book A Table Section ======= --> */}
@@ -152,7 +174,11 @@ const Home = () => {
           {/* <!-- End Book A Table Section --> */}
 
           {/* <!-- ======= Gallery Section ======= --> */}
-          <Gallery />
+          {gallery.data ? (
+            <Gallery gallery={gallery} galleryID={"home-gallery"} />
+          ) : (
+            <></>
+          )}
           {/* <!-- End Gallery Section --> */}
 
           {/* <!-- ======= Contact Section ======= --> */}

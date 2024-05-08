@@ -5,6 +5,8 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
+import GLightbox from "glightbox";
+
 import initializeApp from "./initializeApp";
 import "./App.scss";
 import { NAV_LINKS, NESTED_DROPDOWN_OPTIONS } from "./constants/global";

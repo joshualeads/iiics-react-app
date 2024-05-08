@@ -9,17 +9,14 @@ $color_5: rgba(33, 37, 41, 0.7);
 
 .chefs {
   .swiper {
-    padding-right: 4%;
-    padding-left: 4%;
-    padding-bottom: 4%;
+    padding: 3%;
     .swiper-wrapper {
-      margin-top: 2%;
-      margin-bottom: 2%;
       display: flex;
       .swiper-slide {
         display: flex;
+        justify-content: center;
         .leader-card {
-          width: 100%;
+          width: 95%;
         }
       }
     }
