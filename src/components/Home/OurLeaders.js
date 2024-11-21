@@ -51,9 +51,9 @@ const OurLeaders = (props) => {
             {leadersList.map((leader) => {
               let leaderProfilePic = leader.Profile_Picture || "";
 
-              if (leaderProfilePic) {
-                leaderProfilePic = leaderProfilePic;
-              }
+              // if (leaderProfilePic) {
+              //   leaderProfilePic = leaderProfilePic;
+              // }
 
               return (
                 <SwiperSlide>
@@ -61,7 +61,7 @@ const OurLeaders = (props) => {
                     className="col-lg-4 col-md-6 d-flex align-items-stretch leader-card"
                     data-aos="fade-up"
                     data-aos-delay="100"
-                    key={leader.id}
+                    key={leader.documentId}
                   >
                     <div className="chef-member">
                       <div className="member-img">

@@ -6,7 +6,7 @@ import "swiper/css";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 const Testimonials = (props) => {
-  let testimonialList = props.testimonials.data;
+  let testimonialList = props.testimonials;
   return (
     <section id="testimonials" className="testimonials section-bg">
       <div className="container" data-aos="fade-up">
@@ -36,14 +36,14 @@ const Testimonials = (props) => {
             slidesPerView={"auto"}
           >
             {testimonialList.map((testimony) => {
-              let testimonyPic = testimony.attributes.Photo.data || "";
+              let testimonyPic = testimony.Photo || "";
 
               if (testimonyPic) {
                 testimonyPic =
-                  testimonyPic.attributes.formats.large ||
-                  testimonyPic.attributes.formats.medium ||
-                  testimonyPic.attributes.formats.small ||
-                  testimonyPic.attributes.formats.thumbnail;
+                  testimonyPic.formats.large ||
+                  testimonyPic.formats.medium ||
+                  testimonyPic.formats.small ||
+                  testimonyPic.formats.thumbnail;
               }
 
               let generateStarRating = (rating) => {
@@ -70,21 +70,21 @@ const Testimonials = (props) => {
                 <SwiperSlide>
                   <div
                     className="testimonial-item"
-                    key={`testimony_${testimony.id}`}
+                    key={`testimony_${testimony.documentId}`}
                   >
                     <div className="row gy-4 justify-content-center">
                       <div className="col-lg-6">
                         <div className="testimonial-content">
                           <p>
                             <i className="bi bi-quote quote-icon-left"></i>
-                            {testimony.attributes.Quote}
+                            {testimony.Quote}
                             <i className="bi bi-quote quote-icon-right"></i>
                           </p>
-                          <h3>{testimony.attributes.From}</h3>
-                          <h4>{testimony.attributes.Designation}</h4>
+                          <h3>{testimony.From}</h3>
+                          <h4>{testimony.Designation}</h4>
 
                           <div className="stars">
-                            {generateStarRating(testimony.attributes.Ratings)}
+                            {generateStarRating(testimony.Ratings)}
                           </div>
                         </div>
                       </div>
