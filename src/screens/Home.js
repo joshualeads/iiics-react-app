@@ -20,81 +20,49 @@ import AboutVideoPreview from "../images/about-2.jpg";
 const HomePage_Query = gql`
   query {
     gallery {
-      data {
-        id,
-        attributes {
-          Photos {
-            data {
-              id,
-              attributes {
-                name,
-                alternativeText,
-                caption,
-                width,
-                height,
-                formats,
-                hash
-              }
-            }
-          }
-        }
+      documentId
+      Photos {
+        documentId
+        name,
+        alternativeText,
+        caption,
+        width,
+        height,
+        formats,
+        hash
       }
     }
     testimonials{
-      data {
-        id
-        attributes {
-          From,
-          Designation,
-          Quote,
-          Ratings,
-          Photo {
-            data {
-              id,
-              attributes {
-                name,
-                alternativeText,
-                caption,
-                width,
-                height,
-                formats
-              }
-            }
-          }
-        }
+      documentId,
+      From,
+      Designation,
+      Quote,
+      Ratings,
+      Photo {
+        documentId
+        name,
+        alternativeText,
+        caption,
+        width,
+        height,
+        formats
       }
     }
-    leaders{
-      data {
-        id
-        attributes {
-          Name,
-          Role,
-          Short_Description,
-          Email,
-          Leader_Id,
-          Profile_Picture {
-            data {
-              id
-              attributes {
-                name,
-                alternativeText,
-                caption,
-                width,
-                height,
-                formats
-              }
-            }
-          }
-        }
-      }
-      meta {
-        pagination {
-          page,
-          pageSize,
-          total,
-          pageCount
-        }
+    leaders {
+      documentId,
+      Name,
+      Role,
+      Short_Description,
+      Email,
+      Leader_Id,
+      Profile_Picture {
+        documentId,
+        name,
+        alternativeText,
+        caption,
+        width,
+        height,
+        formats
       }
     }
   }
@@ -158,7 +126,7 @@ const Home = () => {
           {/* <!-- End Menu Section --> */}
 
           {/* <!-- ======= Testimonials Section ======= --> */}
-          {testimonials.data.length ? (
+          {testimonials.length ? (
             <Testimonials testimonials={testimonials} />
           ) : (
             <></>
@@ -166,7 +134,7 @@ const Home = () => {
           {/* <!-- End Testimonials Section --> */}
 
           {/* <!-- ======= Leaders Section ======= --> */}
-          {leaders.data.length ? <OurLeaders leaders={leaders} /> : <> </>}
+          {leaders.length ? <OurLeaders leaders={leaders} /> : <> </>}
           {/* <!-- End Leasers Section --> */}
 
           {/* <!-- ======= Book A Table Section ======= --> */}
@@ -174,7 +142,7 @@ const Home = () => {
           {/* <!-- End Book A Table Section --> */}
 
           {/* <!-- ======= Gallery Section ======= --> */}
-          {gallery.data ? (
+          {gallery ? (
             <Gallery gallery={gallery} galleryID={"home-gallery"} />
           ) : (
             <></>

@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 // Example https://stackblitz.com/edit/react-ts-gvpqsb?file=SimpleGallery.js,index.tsx
+// https://photoswipe.com/react-image-gallery/
 import PhotoSwipeLightbox from "photoswipe/lightbox";
 import "photoswipe/style.css";
 
@@ -28,10 +29,10 @@ const GallerySection = (props) => {
     };
   }, []);
 
-  let galleryList = props.gallery.data;
+  let galleryList = props.gallery;
 
   if (galleryList) {
-    galleryList = galleryList.attributes.Photos.data;
+    galleryList = galleryList.Photos;
   }
 
   return (
@@ -78,10 +79,10 @@ const GallerySection = (props) => {
             >
               {galleryList.map((gallery) => {
                 let galleryPic =
-                  gallery.attributes.formats.large ||
-                  gallery.attributes.formats.medium ||
-                  gallery.attributes.formats.small ||
-                  gallery.attributes.formats.thumbnail;
+                  gallery.formats.large ||
+                  gallery.formats.medium ||
+                  gallery.formats.small ||
+                  gallery.formats.thumbnail;
 
                 return (
                   <SwiperSlide key={galleryPic.hash}>

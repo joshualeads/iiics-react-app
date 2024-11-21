@@ -5,13 +5,13 @@ import "swiper/css";
 import { Navigation, Pagination } from "swiper/modules";
 
 const OurLeaders = (props) => {
-  let leadersList = props.leaders.data;
+  let leadersList = props.leaders;
 
   // Sort Leaders List according to the Order Id
-  let leadersListSort = [...props.leaders.data];
+  let leadersListSort = [...props.leaders];
   console.log(leadersListSort);
   leadersList = leadersListSort.sort((a, b) => {
-    return a.attributes.Leader_Id - b.attributes.Leader_Id;
+    return a.Leader_Id - b.Leader_Id;
   });
 
   return (
@@ -49,11 +49,10 @@ const OurLeaders = (props) => {
             }}
           >
             {leadersList.map((leader) => {
-              let leaderProfilePic =
-                leader.attributes.Profile_Picture.data || "";
+              let leaderProfilePic = leader.Profile_Picture || "";
 
               if (leaderProfilePic) {
-                leaderProfilePic = leaderProfilePic.attributes;
+                leaderProfilePic = leaderProfilePic;
               }
 
               return (
@@ -95,9 +94,9 @@ const OurLeaders = (props) => {
                         </div>
                       </div>
                       <div className="member-info">
-                        <h4>{leader.attributes.Name}</h4>
-                        <span>{leader.attributes.Role}</span>
-                        <p>{leader.attributes.Short_Description}</p>
+                        <h4>{leader.Name}</h4>
+                        <span>{leader.Role}</span>
+                        <p>{leader.Short_Description}</p>
                       </div>
                     </div>
                   </div>
